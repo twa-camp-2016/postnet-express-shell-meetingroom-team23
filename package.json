@@ -1,0 +1,19 @@
+{
+  "name": "postnet",
+  "version": "1.0.0",
+  "description": "* <https://en.wikipedia.org/wiki/POSTNET> * <https://www.cs.drexel.edu/~introcs/Fa12/assignments/HW4/index.html> * <http://www.jiskha.com/>",
+  "main": "index.js",
+  "dependencies": {
+    "linebyline": "^1.3.0",
+    "lodash": "^4.14.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
