@@ -18,12 +18,12 @@ app.get('/choice/:choice', function(req, res) {
 });
 app.get('/barcode-to-zipcode/:barcode', function(req, res) {
     let barcode = req.params.barcode;
-    let zipcode = tozipcode.go(barcode);
+    let zipcode = tozipcode.result(barcode);
     res.send('zipcode is:'+ zipcode);
 });
 app.get('/zipcode-to-barcode/:zipcode', function(req, res) {
     let zipcode = req.params.zipcode;
-    let barcode = tobarcode.go(zipcode);
+    let barcode = tobarcode.result(zipcode);
     res.send('barcode is:'+ barcode);
 });
 app.listen(3000, function () {
