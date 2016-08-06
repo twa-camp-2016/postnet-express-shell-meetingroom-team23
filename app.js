@@ -5,10 +5,11 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 app.use(bodyParser.json());
-let translateBarcodeToZipcode = new TranslateBarcodeToZipcode();
-let translateZipcodeToBarcode = new TranslateZipcodeToBarcode();
+app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/zipcode-to-barcode',function (req,res) {
+
+app.post('/zipcode-to-barcode',function (req,res) {
+    let translateZipcodeToBarcode = new TranslateZipcodeToBarcode();
     let barcode = translateZipcodeToBarcode.translate(req.body.zipcode);
     if(barcode.text !== false) {
         res.status(200).send(barcode.text);
@@ -17,7 +18,8 @@ app.get('/zipcode-to-barcode',function (req,res) {
     }
 });
 
-app.get('/barcode-to-zipcode',function (req,res) {
+app.post('/barcode-to-zipcode',function (req,res) {
+    let translateBarcodeToZipcode = new TranslateBarcodeToZipcode();
     let zipcode = translateBarcodeToZipcode.translate(req.body.barcode);
     if(zipcode.text !== false){
         res.status(200).send(zipcode.text);
@@ -26,7 +28,7 @@ app.get('/barcode-to-zipcode',function (req,res) {
     }
 });
 
-app.listen(3000, function () {
+app.listen(4000, function () {
     console.log('Server listening at http://localhost:4000');
 });
 
