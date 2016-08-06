@@ -1,0 +1,24 @@
+{
+  "name": "postnet-express-shell-meetingroom-team23",
+  "version": "1.0.0",
+  "description": "Write the postnet application:",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duanCoin/postnet-express-shell-meetingroom-team23.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duanCoin/postnet-express-shell-meetingroom-team23/issues"
+  },
+  "homepage": "https://github.com/duanCoin/postnet-express-shell-meetingroom-team23#readme",
+  "dependencies": {
+    "request": "^2.74.0"
+  }
+}
