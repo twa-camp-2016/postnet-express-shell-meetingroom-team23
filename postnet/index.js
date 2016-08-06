@@ -2,8 +2,10 @@ var express = require('express');
 var {PostcodeToBarcode,BarcodeToPostcode} =require('./src/codeTransform')
 var app = express();
 
-app.get('/postcodeTobarcode/:postcod', function(req, res) {
-    let barcode = PostcodeToBarcode.postcodeString(req.params.postcod);
+app.post('/postcodeTobarcode', function(req, res) {
+    let code = req.body.code;
+    let one = new PostcodeToBarcode();
+    let barcode = one.postcodeString(code);
     if (barcode==='error!') {
         res.sendStatus(400);
     }
