@@ -10,25 +10,33 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-//
+app.get('/zipCodeToBarCode/:zipCode', function (req, res) {
 
-app.post('/zipCodeToBarCode', function (req, res) {
-    let zipCode = req.body.zipCode;
+    let zipCode = req.params.zipCode;
     let a = new changeZipcodeToBarcode();
     let barCode = a.changeZipcodeToBarcode(zipCode);
-    console.log(barCode);
-    // if (barCode.text.text !== 'invalid_zipCode') {
-        res.send(barCode.text.text);
-    // }else{
-    //     res.status(400).send();
-    // }
+
+    if (barCode.text === 'invalid_zipCode') {
+        res.status(400).send(barCode);
+
+    }else{
+        res.status(200).send(barCode.text.text);
+
+    }
 });
 
-app.post('/barCodeToZipCode', function (req, res) {
-    let barCode = req.body.barCode;
+app.get('/barCodeToZipCode/:barCode', function (req, res) {
+    let barCode = req.params.barCode;
     let a = new changeBarcodeToZipcode();
     let zipCode = a.changeBarcodeToZipcode(barCode);
-    res.send(zipCode.text.text);
+
+    if (zipCode.text === 'invalid_barCode') {
+        res.status(400).send(zipCode);
+
+    }else{
+        res.status(200).send(zipCode.text.text);
+
+    }
 });
 
 var server = app.listen(3000, function () {

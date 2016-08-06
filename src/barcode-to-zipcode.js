@@ -7,7 +7,6 @@ let {BuildBarCode} = require('../src/BarCodeClass');
 class buildSplittedBarcode {
 
     buildSplittedBarcode(input) {
-        // console.log(input);
 
         let splittedInput = input.split('');
         let splittedBarcode = _(splittedInput).slice(1, splittedInput.length - 1).value();
