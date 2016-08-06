@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zipcodePage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<!--<form action="http://127.0.0.1:3000/zipcode" method="get">-->
+<input type="text" id="code" name="code" placeholder="请输入邮编">
+<input type="submit" value="转码" id="button">
+<div id="div">
+    <!--<input type="text" value="">-->
+</div>
+<!--</form>-->
+<script>
+    $(document).ready(function () {
+        $("#button").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:3000/translate",
+                async: true,
+                data: "code=" + $('#code').val(),
+                success: function (result) {
+                    $("#div").html(result);
+                },
+            })
+        });
+    });
+</script>
+
+</body>
+</html>
