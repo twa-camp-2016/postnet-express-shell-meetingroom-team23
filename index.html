@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>posnet</title>
+</head>
+<style>
+    body{
+        margin:0px;
+    }
+    #content{
+        margin-left:35%;
+        margin-top:10%;
+    }
+    .text {
+        width: 200px;
+        height: 18px;
+        margin-top: 30px;
+    }
+
+    button {
+        width: 60px;
+        height: 25px;
+        background-color: lightskyblue;
+    }
+
+    button:hover {
+        background-color: cadetblue;
+    }
+
+    #text{
+        font-size:22px;
+        margin-left:14%;
+        margin-bottom: 20px;
+    }
+    #barcode{
+        height:80px;
+        /*background-color: cadetblue;*/
+    }
+    #zipcode{
+        height:80px;
+      /*  background-color: coral;*/
+    }
+
+</style>
+<body>
+<div id="content">
+    <div id="text">条码邮编转换器</div>
+    <div id="barcode">
+        barCode：<input type="text" name="barcode" class="text">
+        <button>change</button>
+        <div class="barcode"></div>
+    </div>
+
+    <br/>
+   <div id="zipcode">
+       zipCode：<input type="text" name="zipcode" class="text">
+       <button>change</button>
+       <div class="zipcode"></div>
+   </div>
+
+</div>
+
+
+</body>
+</html>
