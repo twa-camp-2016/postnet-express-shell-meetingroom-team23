@@ -1,0 +1,29 @@
+{
+  "name": "try-express",
+  "version": "1.0.0",
+  "description": "Start Server ------------",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "lodash": "^4.14.1",
+    "readline-sync": "^1.4.4",
+    "request": "^2.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidan-summer/express-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lidan-summer/express-demo/issues"
+  },
+  "homepage": "https://github.com/lidan-summer/express-demo#readme"
+}
